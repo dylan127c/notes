@@ -38,7 +38,9 @@ Nerd Font 网站提供了字形字体的原始字体预览，可以根据需求�
 
 ### OMP 安装
 
+OMP 支持 Windows、MacOS 及 Linux 系统，以下只介绍 Windows 系统和 Linux 系统下的安装方式。
 
+更多详情，请参考：[Oh My Post - Installation](https://ohmyposh.dev/docs/installation/windows)。
 
 #### Windows
 
@@ -147,7 +149,7 @@ oh-my-posh init pwsh | Invoke-Expression
 . $PROFILE
 ```
 
-默认主题即刻生效：
+主题配置即刻生效：
 
 ![image-20230422173549345](images/Bash Themes.images/image-20230422173549345.png)
 
@@ -173,7 +175,7 @@ eval "$(oh-my-posh init bash)"
 
 <img src="images/Bash Themes.images/image-20230422174558843.png" alt="image-20230422174558843" style="zoom:50%;" />
 
-配置即刻生效：
+重新打开 Git Bash 后，主题配置即生效：
 
 <img src="images/Bash Themes.images/image-20230422174643078.png" alt="image-20230422174643078" style="zoom:50%;" />
 
@@ -189,6 +191,6 @@ eval "$(oh-my-posh init bash --config /e/oh-my-posh/themes/emodipt-extend.omp.js
 
 ![image-20230422175430673](images/Bash Themes.images/image-20230422175430673.png)
 
-再次启动 Linux Bash 主题即可生效：
+重新打开 Linux Bash 后，主题配置即生效：
 
 <img src="images/Bash Themes.images/image-20230422175517560.png" alt="image-20230422175517560" style="zoom:50%;" />

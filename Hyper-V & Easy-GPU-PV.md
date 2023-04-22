@@ -41,13 +41,31 @@ bcdedit /set hypervisorlaunchtype auto
 
 ### 兼容性问题
 
-**VMware 和 Hyper-V 在技术层面上互不兼容**，如果 Windows 功能中启用了 Hyper-V 功能，则会导致 VMware 虚拟机启动失败。
+~~**VMware 和 Hyper-V 在技术层面上互不兼容**，如果 Windows 功能中启用了 Hyper-V 功能，则会导致 VMware 虚拟机启动失败。~~
 
-如果你希望在系统上继续使用 VMware，需要关闭 Hyper-V 功能，同时将管理程序启动类型设置为 OFF：
+~~如果你希望在系统上继续使用 VMware，需要关闭 Hyper-V 功能，同时将管理程序启动类型设置为 OFF：~~
 
 ```bash
 bcdedit /set hypervisorlaunchtype off
 ```
+
+自 VMware Workstation 15.5.5 版本之后，支持在开启 Hyper-V 模式下运行！
+
+详情参考：[VMware Workstation 15.5 Now Supports Host Hyper-V Mode](https://blogs.vmware.com/workstation/2020/05/vmware-workstation-now-supports-hyper-v-mode.html)。
+
+<img src="images/Hyper-V & Easy-GPU-PV.images/image-20230423011137400.png" alt="image-20230423011137400" style="zoom:50%;" />
+
+请注意，VMware 仍需要特定 Windows 版本的支持。如果不希望纠结于系统版本，则建议使用 Windows 11，该系统下完全支持 VMware 15.5.5 及后续版本的运行。
+
+以本机 VMware Workstation 16.2.3 为例，已存在虚拟机的情况下，开启虚拟机需要变更某些设置：
+
+- 去除勾选“**虚拟化 Intel VT-x/EPT 或 AMD-V/RVI(V)**”选项！
+
+<img src="images/Hyper-V & Easy-GPU-PV.images/image-20230423011513709.png" alt="image-20230423011513709" style="zoom:50%;" />
+
+为了提高虚拟机性能，建议在开启 Hyper-V 模式下，禁用虚拟机设置中的侧通道缓解：
+
+<img src="images/Hyper-V & Easy-GPU-PV.images/image-20230423011701762.png" alt="image-20230423011701762" style="zoom:50%;" />
 
 ### 虚拟机显卡直通
 
