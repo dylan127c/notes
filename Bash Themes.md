@@ -38,9 +38,9 @@ Nerd Font 网站提供了字形字体的原始字体预览，可以根据需求�
 
 ### OMP 安装
 
-OMP 支持 Windows、MacOS 及 Linux 系统，以下只介绍 Windows 系统和 Linux 系统下的安装方式。
+OMP 支持 Windows、MacOS 及 Linux 系统，详情参考：[Oh My Post - Installation](https://ohmyposh.dev/docs/installation/windows)。
 
-更多详情，请参考：[Oh My Post - Installation](https://ohmyposh.dev/docs/installation/windows)。
+以下只介绍 Windows 系统和 Linux 系统下 OMP 的安装方式。
 
 #### Windows
 
