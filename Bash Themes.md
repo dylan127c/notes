@@ -202,3 +202,6 @@ eval "$(oh-my-posh init bash --config ~/.poshthemes/emodipt-extend.omp.json)"
 重新打开 Linux Bash 后，主题配置即生效：
 
 <img src="images/Bash Themes.images/image-20230422175517560.png" alt="image-20230422175517560" style="zoom:50%;" />
+
+### 现存问题
+

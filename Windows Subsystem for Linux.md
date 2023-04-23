@@ -18,9 +18,9 @@ wsl
 
 控制台将输出与 wsl.exe 程序相关的参数说明：
 
-<img src="images/WSL.images/image-20230423181317618.png" alt="image-20230423181317618" style="zoom:50%;" />
+<img src="images/Windows Subsystem for Linux.images/image-20230423181317618.png" alt="image-20230423181317618" style="zoom:50%;" />
 
-该中文版说明中，会出现许多“分发”的字眼，这个翻译实际不准确的。英文文档中 distribution 在中文文档里不应该被翻译为“分发”，而应翻译为“发行版”。
+该中文版说明中，会出现许多“分发”的字眼，这个翻译实际并不准确。英文文档中 distribution 在中文文档里不应该被翻译为“分发”，而应翻译为“发行版”。
 
 Linux 发行版即 Linux Distribution，它也被称作 GNU/Linux 发行版。它是为一般用户预先集成好的 Linux 操作系统，用户不需要重新编译，直接安装发行版后，只需要小幅度更改设置即可使用。
 
@@ -36,7 +36,7 @@ Linux 发行版通常以软件包管理系统来进行应用软件的管理，�
 
 ### 关于终端命令
 
-后续涉及诸多 Windows PowerShell 命令，其中有一点注意事项，即为终端命令选项提供的参数，一般不能书写空格符号的。
+后续涉及诸多 Windows PowerShell 命令，其中有一点注意事项，即为终端命令选项提供的参数，一般不能包含空格符号。
 
 如果参数包含空格符号，则需要用单引号或双引号将其包裹，或将空格符号转义。
 
@@ -112,13 +112,13 @@ cmd 'ver'
 
 当前系统的版本信息会输出在控制台中：
 
-<img src="images/WSL.images/image-20230423074740531.png" alt="image-20230423074740531" style="zoom:50%;" />
+<img src="images/Windows Subsystem for Linux.images/image-20230423074740531.png" alt="image-20230423074740531" style="zoom:50%;" />
 
 上述例子中，版本号为 22621 就表示当前系统同时支持 WSL1 和 WSL2。
 
 WSL 程序默认存储在 C:\Windows\System32 目录中：
 
-![image-20230423070627519](images/WSL.images/image-20230423070627519.png)
+![image-20230423070627519](images/Windows Subsystem for Linux.images/image-20230423070627519.png)
 
 该程序的企鹅图标即为 Linux 的典型标志。
 
@@ -172,11 +172,11 @@ wsl --install --distribution 'Ubuntu'
 wsl --list --online
 ```
 
-<img src="images/WSL.images/image-20230423072949672.png" alt="image-20230423072949672" style="zoom:50%;" />
+<img src="images/Windows Subsystem for Linux.images/image-20230423072949672.png" alt="image-20230423072949672" style="zoom:50%;" />
 
 需要注意，该命令本质是从网络上拉取列表。如果网络不佳，则可能出现错误提示：
 
-<img src="images/WSL.images/Snipaste_2023-04-23_04-31-27.png" alt="Snipaste_2023-04-23_04-31-27" style="zoom:50%;" />
+<img src="images/Windows Subsystem for Linux.images/Snipaste_2023-04-23_04-31-27.png" alt="Snipaste_2023-04-23_04-31-27" style="zoom:50%;" />
 
 其中 NAME 即为 -\-distribution 选项所能接受的参数，FRIDENDLY NAME 则为更加详解的版本名称，能够在列表中看到默认安装的“Ubuntu”发行版。
 
@@ -187,6 +187,10 @@ wsl --install -d 'Ubuntu-22.04'
 ```
 
 这个命令同时使用于安装其他的 Linux 发行版，这样可以将多个不同的 Linux 发行版安装到本地。
+
+安装完毕后，开始菜单中会出现访问 WSL 程序的入口：
+
+<img src="images/Windows Subsystem for Linux.images/Snipaste_2023-04-20_13-45-20.png" alt="Snipaste_2023-04-20_13-45-20" style="zoom: 70%;" />
 
 #### 查看 Linux 发行版
 
@@ -200,7 +204,7 @@ wsl --install -d 'Ubuntu-22.04'
 wsl --list --verbose
 ```
 
-<img src="images/WSL.images/image-20230423080316852.png" alt="image-20230423080316852" style="zoom:50%;" />
+<img src="images/Windows Subsystem for Linux.images/image-20230423080316852.png" alt="image-20230423080316852" style="zoom:50%;" />
 
 #### 默认 Linux 发行版
 
@@ -214,7 +218,7 @@ wsl --list --verbose
 lsb_release -a
 ```
 
-![image-20230423080934388](images/WSL.images/image-20230423080934388.png)
+![image-20230423080934388](images/Windows Subsystem for Linux.images/image-20230423080934388.png)
 
 回到 PowerShell 中运行以下命令，可以更改默认启动的 Linux 发行版：
 
@@ -228,11 +232,11 @@ wsl --set-default <distrubution name>
 wsl --set-default 'Ubuntu-20.04'
 ```
 
-<img src="images/WSL.images/image-20230423081402029.png" alt="image-20230423081402029" style="zoom:50%;" />
+<img src="images/Windows Subsystem for Linux.images/image-20230423081402029.png" alt="image-20230423081402029" style="zoom:50%;" />
 
 再次调用 wsl.exe 打开 Linux Bash 终端，并查询 Ubuntu 版本信息：
 
-<img src="images/WSL.images/image-20230423081458738.png" alt="image-20230423081458738" style="zoom:50%;" />
+<img src="images/Windows Subsystem for Linux.images/image-20230423081458738.png" alt="image-20230423081458738" style="zoom:50%;" />
 
 可以看到发行版信息已改变，这意味着默认使用的 Linux 发行版确实改变了。
 
@@ -246,7 +250,7 @@ wsl --set-default-version '2'
 
 那么查看当前所有已安装的 Linux 发行版时，就可能出现 VERSION 为 1 的情况：
 
-![image-20230423083115568](images/WSL.images/image-20230423083115568.png)
+![image-20230423083115568](images/Windows Subsystem for Linux.images/image-20230423083115568.png)
 
 示例中 Ubuntu-22.04 发行版使用的 WSL 版本为 WSL1，所幸这并非无可挽救。
 
@@ -264,11 +268,11 @@ wsl --set-version 'Ubuntu-22.04' '2'
 
 WSL 版本的转换需要一定的时间：
 
-<img src="images/WSL.images/image-20230423083533520.png" alt="image-20230423083533520" style="zoom:50%;" />
+<img src="images/Windows Subsystem for Linux.images/image-20230423083533520.png" alt="image-20230423083533520" style="zoom:50%;" />
 
 转换完毕后，可查看到对应 Linux 发行版所使用的 WSL 版本已变更：
 
-<img src="images/WSL.images/image-20230423083618536.png" alt="image-20230423083618536" style="zoom:50%;" />
+<img src="images/Windows Subsystem for Linux.images/image-20230423083618536.png" alt="image-20230423083618536" style="zoom:50%;" />
 
 #### 备份 Linux 发行版
 
@@ -292,7 +296,7 @@ wsl --import <Distribution Name> <InstallLocation> <FileName>
 wsl --export 'Ubuntu-22.04' 'C:\Ubuntu-22.04.tar'
 ```
 
-<img src="images/WSL.images/image-20230423090510661.png" alt="image-20230423090510661" style="zoom:50%;" />
+<img src="images/Windows Subsystem for Linux.images/image-20230423090510661.png" alt="image-20230423090510661" style="zoom:50%;" />
 
 后续需要将 Ubuntu-22.04 重新导入 WSL 中，则运行以下命令：
 
@@ -300,11 +304,11 @@ wsl --export 'Ubuntu-22.04' 'C:\Ubuntu-22.04.tar'
 wsl --import 'My-Ubuntu' 'I:\Virtual Machine' 'C:\Ubuntu-22.04.tar'
 ```
 
-![image-20230423090906831](images/WSL.images/image-20230423090906831.png)
+![image-20230423090906831](images/Windows Subsystem for Linux.images/image-20230423090906831.png)
 
 导入的 Linux 发行版会以导入时指定的发行版名称，出现在当前已安装的发行版列表中：
 
-<img src="images/WSL.images/image-20230423091011589.png" alt="image-20230423091011589" style="zoom:50%;" />
+<img src="images/Windows Subsystem for Linux.images/image-20230423091011589.png" alt="image-20230423091011589" style="zoom:50%;" />
 
 #### 卸载 Linux 发行版
 
@@ -322,7 +326,7 @@ wsl --unregister <DistributionName>
 wsl --unregister 'My-Ubuntu'
 ```
 
-<img src="images/WSL.images/image-20230423091420664.png" alt="image-20230423091420664" style="zoom:50%;" />
+<img src="images/Windows Subsystem for Linux.images/image-20230423091420664.png" alt="image-20230423091420664" style="zoom:50%;" />
 
 卸载或注销操作会一并将相关的文件删除，不用担心文件冗余的情况。
 
@@ -372,7 +376,7 @@ wsl --terminate 'Ubuntu-20.04'
 \\wsl$\Ubuntu-20.04
 ```
 
-<img src="images/WSL.images/image-20230423092829460.png" alt="image-20230423092829460" style="zoom:50%;" />
+<img src="images/Windows Subsystem for Linux.images/image-20230423092829460.png" alt="image-20230423092829460" style="zoom:50%;" />
 
 Linux 发行版的虚拟驱动器通常名为 ext4.vhdx 且被存储在 AppData 内相关的 WSL 目录中，这种虚拟驱动器通常可以被挂载。
 
@@ -380,7 +384,7 @@ Linux 发行版的虚拟驱动器通常名为 ext4.vhdx 且被存储在 AppData 
 
 但该形式存在一个问题，Linux 发行版在不使用时总是处于 Stopped 状态：
 
-<img src="images/WSL.images/image-20230423093332898.png" alt="image-20230423093332898" style="zoom:50%;" />
+<img src="images/Windows Subsystem for Linux.images/image-20230423093332898.png" alt="image-20230423093332898" style="zoom:50%;" />
 
 如果目标发行版处于 Stopped 状态，那么访问该发行版的系统文件时，WSL 需先将该发行版启动，随后 Windows 系统才能到发行版文件。
 
@@ -392,11 +396,11 @@ WSL 实则并未提供任何让 Linux 发行版随开机启动的放，但可以
 
 将访问指定 Linux 发行版系统文件的链接，映射为网络驱动器：
 
-<img src="images/WSL.images/image-20230423094012724.png" alt="image-20230423094012724" style="zoom:50%;" />
+<img src="images/Windows Subsystem for Linux.images/image-20230423094012724.png" alt="image-20230423094012724" style="zoom:50%;" />
 
 添加完毕后，电脑中会出现该 Linux 发行版的网络位置：
 
-<img src="images/WSL.images/image-20230423094119486.png" alt="image-20230423094119486" style="zoom:50%;" />
+<img src="images/Windows Subsystem for Linux.images/image-20230423094119486.png" alt="image-20230423094119486" style="zoom:50%;" />
 
 使用命令行查看所有已安装 Linux 发行版的状态：
 
@@ -404,7 +408,7 @@ WSL 实则并未提供任何让 Linux 发行版随开机启动的放，但可以
 wsl --list --verbose
 ```
 
-![image-20230423094208011](images/WSL.images/image-20230423094208011.png)
+![image-20230423094208011](images/Windows Subsystem for Linux.images/image-20230423094208011.png)
 
 将看到 Ubuntu-22.04 发行版会一直处于 Running 状态。
 
@@ -420,7 +424,7 @@ wsl --list --verbose
 sudo passwd
 ```
 
-<img src="images/WSL.images/image-20230423084627936.png" alt="image-20230423084627936" style="zoom:50%;" />
+<img src="images/Windows Subsystem for Linux.images/image-20230423084627936.png" alt="image-20230423084627936" style="zoom:50%;" />
 
 修改完毕后，该密码即会作为 root 用户的新密码。
 
@@ -438,6 +442,6 @@ whoami
 
 测试 root 用户密码的可用性：
 
-<img src="images/WSL.images/image-20230423084836756.png" alt="image-20230423084836756" style="zoom:50%;" />
+<img src="images/Windows Subsystem for Linux.images/image-20230423084836756.png" alt="image-20230423084836756" style="zoom:50%;" />
 
 显然 root 用户密码已成功变更。

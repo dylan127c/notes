@@ -21,13 +21,13 @@ WSA 依赖于虚拟化技术，需要在 Windows 功能中启用 Hyper-V 功能�
 
 在 Windows 设置中找到**国家或地区**选项，将“中国”修改为“美国”（或其它支持安装 WSA 安卓子系统应用的区域）：
 
-<img src="images/WSA.images/Snipaste_2022-08-12_15-04-53.png" alt="Snipaste_2022-08-12_15-04-53" style="zoom: 50%;" />
+<img src="images/Windows Subsystem for Android.images/Snipaste_2022-08-12_15-04-53.png" alt="Snipaste_2022-08-12_15-04-53" style="zoom: 50%;" />
 
 修改完毕后打开 Microsoft Store 应用商店，它将自动定位到美区的应用市场上。
 
 搜索 Amazon Appstore 应用下载并安装：
 
-<img src="images/WSA.images/Snipaste_2022-08-12_15-07-50.png" alt="Snipaste_2022-08-12_15-07-50" style="zoom: 50%;" />
+<img src="images/Windows Subsystem for Android.images/Snipaste_2022-08-12_15-07-50.png" alt="Snipaste_2022-08-12_15-07-50" style="zoom: 50%;" />
 
 **Amazon Appstore 应用安装完毕后，WSA 也将一并安装到 Windows 系统中。**
 
@@ -43,7 +43,7 @@ WSA 依赖于虚拟化技术，需要在 Windows 功能中启用 Hyper-V 功能�
 9P3395VX91NR
 ```
 
-<img src="images/WSA.images/image-20220812151825728.png" alt="image-20220812151825728" style="zoom: 50%;" />
+<img src="images/Windows Subsystem for Android.images/image-20220812151825728.png" alt="image-20220812151825728" style="zoom: 50%;" />
 
 其中，列表末尾的 .msixbundle 类型文件就是 WSA 的安装包，下载到本地任意目录。
 
@@ -53,13 +53,13 @@ WSA 依赖于虚拟化技术，需要在 Windows 功能中启用 Hyper-V 功能�
 Add-AppxPackage .\MicrosoftCorporationII.WindowsSubsystemForAndroid_2206.40000.15.0_neutral___8wekyb3d8bbwe.Msixbundle
 ```
 
-<img src="images/WSA.images/Snipaste_2022-08-12_15-34-00.png" alt="Snipaste_2022-08-12_15-34-00" style="zoom: 50%;" />
+<img src="images/Windows Subsystem for Android.images/Snipaste_2022-08-12_15-34-00.png" alt="Snipaste_2022-08-12_15-34-00" style="zoom: 50%;" />
 
 等待安装进度条结束，WSA 安装即完成。
 
 在 Windows 11 系统下，唤醒开始菜单，能够在全部应用列表中，查看到适用于 Android™️ 的 Windows 子系统设置：
 
-<img src="images/WSA.images/image-20220812153906724.png" alt="image-20220812153906724" style="zoom:50%;" />
+<img src="images/Windows Subsystem for Android.images/image-20220812153906724.png" alt="image-20220812153906724" style="zoom:50%;" />
 
 这就意味着 WSA 已经成功安装到 Windows 系统中。
 
@@ -79,15 +79,15 @@ ADB 工具在 Windows 系统下，是一个简单的 abd.exe 可执行程序，�
 
 ADB 工具可从 [Platform Tools](https://developer.android.com/studio/releases/platform-tools) 网站获取，选择“**适用于 Windows 的 SDK Platform-Tools**”下载：
 
-<img src="images/WSA.images/image-20220812163031217.png" alt="image-20220812163031217" style="zoom: 50%;" />
+<img src="images/Windows Subsystem for Android.images/image-20220812163031217.png" alt="image-20220812163031217" style="zoom: 50%;" />
 
 下载并解压到固定目录（便于配置全局环境变量）：
 
-<img src="images/WSA.images/image-20220812160002367.png" alt="image-20220812160002367" style="zoom: 50%;" />
+<img src="images/Windows Subsystem for Android.images/image-20220812160002367.png" alt="image-20220812160002367" style="zoom: 50%;" />
 
 随后将 abd.exe 所在目录，添加到**系统变量**下的 Path 中：
 
-<img src="images/WSA.images/image-20220812163246253.png" alt="image-20220812163246253" style="zoom:50%;" />
+<img src="images/Windows Subsystem for Android.images/image-20220812163246253.png" alt="image-20220812163246253" style="zoom:50%;" />
 
 完成后，在任何位置唤醒终端，都能够直接使用 adb 工具。
 
@@ -97,7 +97,7 @@ ADB 工具实则用于调试 Android 系统，启用调试首先需要与 Androi
 
 打开 WSA 子系统，在开发人员选项卡中启用开发人员模式：
 
-<img src="images/WSA.images/image-20220812160152216.png" alt="image-20220812160152216" style="zoom: 50%;" />
+<img src="images/Windows Subsystem for Android.images/image-20220812160152216.png" alt="image-20220812160152216" style="zoom: 50%;" />
 
 首次启用开发人员模式时，WSA 内的调试模式可能仍尚未启用，使用 ADB 工具连接 WSA 可能会提示连接失败。建议启用开发人员模式后**重启子系统**，或进入**管理开发人员设置**手动**激活开发人员模式**。
 
@@ -115,7 +115,7 @@ adb connect 127.0.0.1:58526
 adb disconnect 127.0.0.1:58526
 ```
 
-<img src="images/WSA.images/image-20220812160804526.png" alt="image-20220812160804526" style="zoom: 50%;" />
+<img src="images/Windows Subsystem for Android.images/image-20220812160804526.png" alt="image-20220812160804526" style="zoom: 50%;" />
 
 #### 使用 ADB 安装应用
 
@@ -127,11 +127,11 @@ adb install {android package path}
 
 以 Apple Music 应用为例，假如已经获取了 Apple Music.apk 安装包，那么执行以下命令即可完成安装：
 
-<img src="images/WSA.images/image-20220812161146589.png" alt="image-20220812161146589" style="zoom:50%;" />
+<img src="images/Windows Subsystem for Android.images/image-20220812161146589.png" alt="image-20220812161146589" style="zoom:50%;" />
 
 在 Windows 11 系统下，能够在全部应用中找到已安装的 Android 应用入口：
 
-<img src="images/WSA.images/image-20220812161242068.png" alt="image-20220812161242068" style="zoom:50%;" />
+<img src="images/Windows Subsystem for Android.images/image-20220812161242068.png" alt="image-20220812161242068" style="zoom:50%;" />
 
 卸载 Android 应用与卸载 UWP 应用的操作一样，在应用图标的右键菜单中选择卸载，可移除指定的应用。
 
@@ -139,7 +139,7 @@ adb install {android package path}
 
 WSA（2206.40000.15.0）默认采用的**子系统资源**策略是**连续**模式，该模式下子系统始终在后台运行，以此加快 WSA 应用的启动速度。
 
-<img src="images/WSA.images/image-20230414193447540.png" alt="image-20230414193447540" style="zoom: 50%;" />
+<img src="images/Windows Subsystem for Android.images/image-20230414193447540.png" alt="image-20230414193447540" style="zoom: 50%;" />
 
 简单来说，子系统资源中如果选择了连续模式，就等同于选择了让 WSA 随开机一起自启动。
 
@@ -147,13 +147,13 @@ WSA（2206.40000.15.0）默认采用的**子系统资源**策略是**连续**模
 
 最新版本（2303.40000.4.0）的 WSA 中还提供了**部分运行中**模式：
 
-<img src="images/WSA.images/image-20230421193537358.png" alt="image-20230421193537358" style="zoom:50%;" />
+<img src="images/Windows Subsystem for Android.images/image-20230421193537358.png" alt="image-20230421193537358" style="zoom:50%;" />
 
-### 其他问题
+### 现存问题
 
 WSA 安装子系统在使用的过程中，可能会弹出以下连接受限通知：
 
-<img src="images/WSA.images/image-20220812165347271.png" alt="image-20220812165347271" style="zoom:50%;" />
+<img src="images/Windows Subsystem for Android.images/image-20220812165347271.png" alt="image-20220812165347271" style="zoom:50%;" />
 
 但实际 VirtWifi 并未受限，换句话说 WSA 内的网络访问实际没有问题。
 
