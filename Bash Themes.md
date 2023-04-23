@@ -187,7 +187,15 @@ eval "$(oh-my-posh init bash --config /e/oh-my-posh/themes/emodipt-extend.omp.js
 
 <img src="images/Bash Themes.images/image-20230422174757360.png" alt="image-20230422174757360" style="zoom:50%;" />
 
-以 WSL 为例，修改 Bash 主题可以进入 Linux Shell 或其指定的 Linux 发行版的 Shell 中，将 OMP 配置添加到 /etc/bash.bashrc 文件：
+以 WSL 为例，进入 Linux Shell 或其指定的 Linux 发行版的 Shell 中，将 OMP 配置添加到 /etc/bash.bashrc 文件：
+
+```bash
+sudo vim /etc/bash.bashrc
+```
+
+```
+eval "$(oh-my-posh init bash --config ~/.poshthemes/emodipt-extend.omp.json)"
+```
 
 ![image-20230422175430673](images/Bash Themes.images/image-20230422175430673.png)
 
