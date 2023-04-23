@@ -191,15 +191,15 @@ wsl --import <Distribution Name> <InstallLocation> <FileName>
 以 Ubuntu-22.04 为例，需要将它导出则运行以下命令：
 
 ```shell
-wsl --export Ubuntu-22.04 C:\Ubuntu-22.04.tar
+wsl --export 'Ubuntu-22.04' 'C:\Ubuntu-22.04.tar'
 ```
 
 <img src="images/WSL.images/image-20230423090510661.png" alt="image-20230423090510661" style="zoom:50%;" />
 
 后续需要将 Ubuntu-22.04 重新导入，则运行以下命令：
 
-```
-wsl --import My-Ubuntu I:\Virtual-Machine C:\Ubuntu-22.04.tar
+```shell
+wsl --import 'My-Ubuntu' 'I:\Virtual Machine' 'C:\Ubuntu-22.04.tar'
 ```
 
 ![image-20230423090906831](images/WSL.images/image-20230423090906831.png)
@@ -270,7 +270,7 @@ wsl --terminate Ubuntu-20.04
 
 以 Ubuntu-20.04 为例，需要访问它的内部文件，直接访问以下路径即可：
 
-```shell
+```
 \\wsl$\Ubuntu-20.04
 ```
 
@@ -284,7 +284,9 @@ Linux 发行版的虚拟驱动器通常名为 ext4.vhdx 且被存储在 AppData 
 
 <img src="images/WSL.images/image-20230423093332898.png" alt="image-20230423093332898" style="zoom:50%;" />
 
-而每次访问 Linux 文件时，如果目标发行版处于 Stopped 状态，则 WSL 需要先将其启动，之后才能允许访问。换言之，如果目标 Linux 发行版尚未启动，那么直接访问 Linux 文件时就会有一定的卡顿发生。
+每次访问 Linux 文件时，如果目标发行版处于 Stopped 状态，则 WSL 需要先将其启动，之后才能允许访问。
+
+换言之，如果目标 Linux 发行版尚未启动，那么直接访问 Linux 文件就会出现卡顿的现象。
 
 ### 自启 Linux 发行版
 
